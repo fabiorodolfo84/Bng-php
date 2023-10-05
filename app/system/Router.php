@@ -1,9 +1,6 @@
 <?php
 
-namespace bng\System;
-
-use bng\Controllers\Main;
-use Exception;
+namespace System;
 
 class Router
 {
@@ -11,6 +8,8 @@ class Router
     {
         // main route values
         $httpverb = $_SERVER['REQUEST_METHOD'];
+        
+        // default controller and method
         $controller = 'main';
         $method = 'index';
 
@@ -38,11 +37,12 @@ class Router
 
         // tries to instanciate the controller and execute the method
         try {
-            $class = "bng\Controllers\\$controller";
+            $class = "Controllers\\$controller";
             $controller = new $class();
             $controller->$method(...$parameters);
-        } catch (Exception $err) {
-            die($err->getMessage());
+        } catch (\Throwable $th) {
+            echo $th->getMessage();
+            die('Acesso inválido.');
         }
     }
 }

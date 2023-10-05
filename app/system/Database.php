@@ -1,6 +1,6 @@
 <?php
 
-namespace bng\System;
+namespace System;
 
 use PDO;
 use PDOException;

@@ -2,7 +2,7 @@
 
 session_start();
 
-use bng\System\Router;
+use System\Router;
 
 require_once('../vendor/autoload.php');
 
