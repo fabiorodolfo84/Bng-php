@@ -1,6 +1,8 @@
 <?php
 
-namespace System;
+namespace bng\System;
+
+use Exception;
 
 class Router
 {
@@ -37,11 +39,10 @@ class Router
 
         // tries to instanciate the controller and execute the method
         try {
-            $class = "Controllers\\$controller";
+            $class = "bng\Controllers\\$controller";
             $controller = new $class();
             $controller->$method(...$parameters);
         } catch (\Throwable $th) {
-            echo $th->getMessage();
             die('Acesso inválido.');
         }
     }
