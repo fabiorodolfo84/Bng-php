@@ -1,0 +1,11 @@
+{
+  "name": "fabio/bng",
+  "description": "Aplicação para gestão de name gathering.",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Fabio Rodolfo de Oliveira"
+    }
+  ],
+  "require": {}
+}
