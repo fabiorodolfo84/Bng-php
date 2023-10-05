@@ -1,5 +1,8 @@
 <?php
-echo "index.php hello ";
 
-require_once('../app/config.php');
-echo APP_NAME;
+use bng\System\Router;
+
+require_once('../vendor/autoload.php');
+
+echo '<pre>';
+Router::dispatch();
