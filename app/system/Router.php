@@ -36,15 +36,13 @@ class Router
             unset($parameters["mt"]);
         }
 
-       //tries to instanciate the controller and execute the method
-       try {
-        //code 
-        $class = "bng\Controllers\\$controller";
-        $controller = new $class();
-        $controller->$method(...$parameters);
-       }catch (\Exception $err) {
-        die($err->getMessage());
-
-       }
+        // tries to instanciate the controller and execute the method
+        try {
+            $class = "bng\Controllers\\$controller";
+            $controller = new $class();
+            $controller->$method(...$parameters);
+        } catch (Exception $err) {
+            die($err->getMessage());
+        }
     }
 }
